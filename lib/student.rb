@@ -20,6 +20,7 @@ class Student
       SQL 
         DB[:conn].execute(sql)
   end
+  
   def self.drop_table
     sql = <<-SQL 
       DROP TABLE students
@@ -35,6 +36,7 @@ class Student
     SQL 
     DB[:conn].execute(sql, self.name, self.grade)
   end
+  
   def self.create(name:, grade:)
     student = Student.new(name,grade)
     student.save
